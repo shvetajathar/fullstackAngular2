@@ -1,0 +1,11 @@
+@model SMVC.Models.Grade
+
+<h1>Product Display</h1>
+<hr>
+<h2>Details of @Model.GradeName</h2>
+<p>@Html.DisplayNameFor(m=>m.GradeId) &nbsp;&nbsp;@Html.DisplayFor(m=>m.GradeId)</p>
+<p>@Html.DisplayNameFor(m=>m.GradeName) &nbsp;&nbsp;@Html.DisplayFor(m=>m.GradeName)</p>
+<p>@Html.DisplayNameFor(m=>m.Section) &nbsp;&nbsp;@Html.DisplayFor(m=>m.Section)</p>
+
+<hr>
+@Html.ActionLink("Back to List","List")

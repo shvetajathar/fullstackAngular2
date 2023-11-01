@@ -1,0 +1,29 @@
+ @model BOOK
+
+    <h1>Creating List</h1>
+    <hr>
+    @using(Html.BeginForm())
+    {
+        
+
+        <td>   
+        @Html.DisplayNameFor(e=>e.Title)
+        @Html.EditorFor(e=>e.Title)
+        @Html.ValidationMessageFor(e=>e.Title)
+        </td>
+        <td>   
+        @Html.DisplayNameFor(e=>e.Author)
+        @Html.EditorFor(e=>e.Author)
+        @Html.ValidationMessageFor(e=>e.Author)
+        </td>
+        <td>   
+        @Html.DisplayNameFor(e=>e.publishedYear)
+        @Html.EditorFor(e=>e.publishedYear)
+        @Html.ValidationMessageFor(e=>e.publishedYear)
+        </td>
+
+        <input type='submit' value='Create'>
+
+    }
+
+    @* @Html.ActionLink("Back to List","Index");  *@

@@ -1,0 +1,12 @@
+@model SMVC.Models.Student
+
+<h1>Product Display</h1>
+<hr>
+<h2>Details of @Model.StudentName</h2>
+<p>@Html.DisplayNameFor(m=>m.StudentId) &nbsp;&nbsp;@Html.DisplayFor(m=>m.StudentId)</p>
+<p>@Html.DisplayNameFor(m=>m.DateOfBirth) &nbsp;&nbsp;@Html.DisplayFor(m=>m.DateOfBirth)</p>
+<p>@Html.DisplayNameFor(m=>m.Photo) &nbsp;&nbsp;@Html.DisplayFor(m=>m.Photo)</p>
+<p>@Html.DisplayNameFor(m=>m.Height) &nbsp;&nbsp;@Html.DisplayFor(m=>m.Height)</p>
+<p>@Html.DisplayNameFor(m=>m.Weight) &nbsp;&nbsp;@Html.DisplayFor(m=>m.Weight)</p>
+<hr>
+@Html.ActionLink("Back to List","List")

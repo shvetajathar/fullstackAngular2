@@ -1,0 +1,33 @@
+@model EmpMvc.Models.Movie
+<h1>Adding product Data</h1>
+<hr>
+@using (Html.BeginForm()){
+    <div>
+        <div>
+            @Html.DisplayNameFor(m=>m.Id)
+            @Html.EditorFor(m=>m.Id)
+            @Html.ValidationMessageFor(m=>m.Id)
+        </div>
+        <div>
+            @Html.DisplayNameFor(m=>m.Name)
+            @Html.EditorFor(m=>m.Name)
+            @Html.ValidationMessageFor(m=>m.Name)
+        </div>
+        <div>
+            @Html.DisplayNameFor(m=>m.year)
+            @Html.EditorFor(m=>m.year)
+            @Html.ValidationMessageFor(m=>m.year)
+        </div>
+        <div>
+            @Html.DisplayNameFor(m=>m.Rating)
+            @Html.EditorFor(m=>m.Rating)
+            
+        </div>
+        
+    </div>
+    <br>
+
+    <input type='submit' value="Save">
+}
+
+

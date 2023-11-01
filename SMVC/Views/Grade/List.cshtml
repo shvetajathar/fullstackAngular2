@@ -1,0 +1,23 @@
+@model IEnumerable<Grade>
+    <hr>
+    @Html.ActionLink("Add Record","List")
+    <hr>
+<h1>Listing Grade</h1>
+<table class="table">
+    <thead>
+        <th>@Html.DisplayNameFor(m=>m.GradeId)</th>
+        <th>@Html.DisplayNameFor(m=>m.GradeName)</th>
+        <th>@Html.DisplayNameFor(m=>m.Section)</th>
+    </thead>
+    <tbody>
+        @foreach(var data in @Model)
+        {
+            <tr>
+                <td>@data.GradeId</td>
+                <td>@data.GradeName</td>
+                <td>@data.Section</td>
+                <td>@Html.ActionLink("Display","List",new {id=@data.GradeId})</td>&nbsp;
+            </tr>
+        }
+    </tbody>
+</table>

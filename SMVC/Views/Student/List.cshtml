@@ -1,0 +1,29 @@
+@model IEnumerable<Student>
+    <hr>
+    @Html.ActionLink("Add Record","List")
+    <hr>
+<h1>Listing Student</h1>
+<table class="table">
+    <thead>
+        <th>@Html.DisplayNameFor(m=>m.StudentId)</th>
+        <th>@Html.DisplayNameFor(m=>m.StudentName)</th>
+        <th>@Html.DisplayNameFor(m=>m.DateOfBirth)</th>
+        <th>@Html.DisplayNameFor(m=>m.Photo)</th>
+        <th>@Html.DisplayNameFor(m=>m.Height)</th>
+        <th>@Html.DisplayNameFor(m=>m.Weight)</th>
+    </thead>
+    <tbody>
+        @foreach(var data in @Model)
+        {
+            <tr>
+                <td>@data.StudentId</td>
+                <td>@data.StudentName</td>
+                <td>@data.DateOfBirth</td>
+                <td>@data.Photo</td>
+                <td>@data.Height</td>
+                <td>@data.Weight</td>
+                <td>@Html.ActionLink("Display","List",new {id=@data.StudentId})</td>&nbsp;
+            </tr>
+        }
+    </tbody>
+</table>

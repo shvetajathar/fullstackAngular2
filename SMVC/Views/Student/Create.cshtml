@@ -1,0 +1,50 @@
+@model SMVC.Models.Student
+
+<h2>Adding Student</h2>
+<hr>
+@using (Html.BeginForm())
+{
+
+
+    <div>
+
+        @Html.DisplayNameFor(m=>m.StudentId)
+        @Html.EditorFor(m=>m.StudentId)
+        @Html.ValidationMessageFor(m=>m.StudentId)
+      
+
+    </div>
+    <div>
+          @Html.DisplayNameFor(m=>m.StudentName)
+          @Html.EditorFor(m=>m.StudentName)
+          @Html.ValidationMessageFor(m=>m.StudentName)       
+    </div>
+    <div>
+          @Html.DisplayNameFor(m=>m.DateOfBirth)
+          @Html.EditorFor(m=>m.DateOfBirth)
+          @Html.ValidationMessageFor(m=>m.DateOfBirth)       
+    </div>
+    <div>
+         @Html.DisplayNameFor(m=>m.Photo)
+         @Html.EditorFor(m=>m.Photo)
+         @Html.ValidationMessageFor(m=>m.Photo)
+    </div>
+    <div>
+        @Html.DisplayNameFor(m=>m.Height)
+        @Html.EditorFor(m=>m.Height)
+        @Html.ValidationMessageFor(m=>m.Height)
+    </div>
+    <div>
+        @Html.DisplayNameFor(m=>m.Weight)
+        @Html.EditorFor(m=>m.Weight)
+        @Html.ValidationMessageFor(m=>m.Weight)
+    </div>
+    
+<br>
+<input type="submit" value="Save">
+
+
+}
+<br>
+<br>
+@Html.ActionLink("Back to List","List");

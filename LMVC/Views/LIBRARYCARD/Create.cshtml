@@ -1,0 +1,33 @@
+ @model LIBRARYCARD
+
+    <h1>Creating List</h1>
+    <hr>
+    @using(Html.BeginForm())
+    {
+        <td>
+        @Html.DisplayNameFor(e=>e.Id)
+        @Html.EditorFor(e => e.Id)
+        @Html.ValidationMessageFor(e=>e.Id)
+        </td>
+
+        <td>   
+        @Html.DisplayNameFor(e=>e.CardNumber)
+        @Html.EditorFor(e=>e.CardNumber)
+        @Html.ValidationMessageFor(e=>e.CardNumber)
+        </td>
+        <td>   
+        @Html.DisplayNameFor(e=>e.MemberName)
+        @Html.EditorFor(e=>e.MemberName)
+        @Html.ValidationMessageFor(e=>e.MemberName)
+        </td>
+        <td>   
+        @Html.DisplayNameFor(e=>e.ExpiryDate)
+        @Html.EditorFor(e=>e.ExpiryDate)
+        @Html.ValidationMessageFor(e=>e.ExpiryDate)
+        </td>
+
+        <input type='submit' value='Create' />
+
+    }
+
+    @* @Html.ActionLink("Back to List","Index");  *@
