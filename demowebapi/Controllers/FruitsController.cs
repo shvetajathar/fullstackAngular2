@@ -20,6 +20,13 @@ namespace demoswpapi.Controllers;
         {
             return Fruits[id];
         }
+        [HttpPost]
+        [Route("AddFruit")]
+        public void Post([FromBody] string data)
+        {
+            Fruits.Add(data);
+        }
+
 
     }
 
