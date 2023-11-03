@@ -32,11 +32,11 @@ namespace demoswpapi.Controllers;
         {
             Fruits[id]=data;
         }
-        [HttpPut]
+        [HttpDelete]
         [Route("Delete/{id}")]
-        public void Put(int id,[FromBody] string data)
+        public void Delete(int id)
         {
-            Fruits[id]=data;
+            Fruits.RemoveAt(id);
         }
 
 
