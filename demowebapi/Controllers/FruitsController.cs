@@ -14,7 +14,7 @@ namespace demoswpapi.Controllers;
         {
             return Fruits;
         }
-        [HttpGet("{id}")]
+        [HttpGet]
         [Route("ShowFruits/{id}")]
         public string GetFruits(int id)
         {
