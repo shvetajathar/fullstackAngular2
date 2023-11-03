@@ -26,6 +26,19 @@ namespace demoswpapi.Controllers;
         {
             Fruits.Add(data);
         }
+        [HttpPut]
+        [Route("Edit/{id}")]
+        public void Put(int id,[FromBody] string data)
+        {
+            Fruits[id]=data;
+        }
+        [HttpPut]
+        [Route("Delete/{id}")]
+        public void Put(int id,[FromBody] string data)
+        {
+            Fruits[id]=data;
+        }
+
 
 
     }
