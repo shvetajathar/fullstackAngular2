@@ -10,9 +10,15 @@ namespace demoswpapi.Controllers;
         static List<string> Fruits=new List<string>{"Apple","Mango","Orange","Grapes","Banana"};
         [HttpGet]
         [Route("ShowFruits")]
-        public IEnumerable<string> Get()
+        public IEnumerable<string> GetFruits()
         {
             return Fruits;
+        }
+        [HttpGet("{id}")]
+        [Route("ShowFruits/{id}")]
+        public string GetFruits(int id)
+        {
+            return Fruits[id];
         }
 
     }
