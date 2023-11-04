@@ -39,10 +39,12 @@ namespace Movieapp.Controllers
         [Route("MovieDetails/{id}")]
         public IActionResult Get(int id)
         {
-            var data=from d in context.Details select new{
-                d.Movie.Name,
+            var data=from d in context.Details where d.MovieId==d.Movie.Id select new{
                 d.Actor,
-                d.Role
+                d.Role,
+                d.Movie.Name,
+                d.Movie.YearRelease
+
 
             };
             return Ok(data.ToList());
