@@ -18,9 +18,21 @@ namespace Movieapp.Controllers
         [Route("ListDetails")]
         public IActionResult Get()
         {
-            // var data=context.Movies.ToList();
-            var data=from m in context.Details select m;
-            return Ok(data);
+            // var data=from movie in context.Movies join detail in context.Details on movie.Id equals  detail.MovieId select new
+            // {
+            //     movie.Name,
+            //     detail.Actor,
+            //     detail.Role
+
+
+            // };
+            var data=from d in context.Details select new{
+                d.Movie.Name,
+                d.Actor,
+                d.Role
+
+            };
+            return Ok(data.ToList());
         }
 
         [HttpGet]

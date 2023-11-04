@@ -20,8 +20,17 @@ namespace Movieapp.Controllers
         {
 
             // var data=context.Movies.ToList();
-            var data=from movie in context.Movies join detail in context.Details on Movies.Id equals 
-            return Ok(data);
+            var data=from movie in context.Movies join detail in context.Details on movie.Id 
+            equals  detail.MovieId select new
+            {
+                detail.Actor,
+                detail.Role,
+                movie.Name,
+                movie.YearRelease
+
+
+            };
+            return Ok(data.ToList());
         }
 
         [HttpGet]
