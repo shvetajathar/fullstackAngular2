@@ -34,26 +34,39 @@ namespace Movieapp.Controllers
             };
             return Ok(data.ToList());
         }
-
         [HttpGet]
 
-        [Route("ListDetails/{id}")]
+        [Route("MovieDetails/{id}")]
         public IActionResult Get(int id)
         {
-            // var data=context.Movies.ToList();
-            if(id==null)
-            {
-                return BadRequest("Id cannot be null");
-            }
-            var data=(from m in context.Details where m.DetailId==id select m).FirstOrDefault();
-            // var data=context.Movies.Find(id);
-            if(data==null)
-            {
-                return NotFound($"Detail {id} not found");
-            }
-            return Ok(data);
-            
+            var data=from d in context.Details select new{
+                d.Movie.Name,
+                d.Actor,
+                d.Role
+
+            };
+            return Ok(data.ToList());
         }
+
+        // [HttpGet]
+
+        // [Route("ListDetails/{id}")]
+        // public IActionResult Get(int id)
+        // {
+        //     // var data=context.Movies.ToList();
+        //     if(id==null)
+        //     {
+        //         return BadRequest("Id cannot be null");
+        //     }
+        //     var data=(from m in context.Details where m.DetailId==id select m).FirstOrDefault();
+        //     // var data=context.Movies.Find(id);
+        //     if(data==null)
+        //     {
+        //         return NotFound($"Detail {id} not found");
+        //     }
+        //     return Ok(data);
+            
+        // }
         [HttpPost]
         [Route("AddDetail")]
         public IActionResult Post(Detail detail)
