@@ -44,11 +44,13 @@ namespace Movieapp.Controllers
         }
         [HttpPost]
         [Route("AddDetail")]
-        public IActionResult Post(Detail detail)
+        public IActionResult Post(int id,Detail  detail)
         {
+             var data=context.Movies.Where(m=>m.MovieId=id);
             if(ModelState.IsValid)
             {
                 try{
+                   
                     context.Details.Add(detail);
                     context.SaveChanges();
 
