@@ -8,7 +8,7 @@ namespace Movieapp.Controllers
 {
     
     [ApiController]
-    [Route("/[controller])")]
+    [Route("/[controller]")]
     public class DetailController:ControllerBase
     {
         MovieContext context=new MovieContext();
