@@ -31,22 +31,31 @@ namespace EMSApi.Controllers{
             }
             return BadRequest();
         }
-    //     [HttpPost]
-    //     [Route("Edit")]
-    //      public IActionResult Put()
-    //     {
+        [HttpPost]
+        [Route("Edit")]
+         public IActionResult Put(Department department)
+        {
+            if(ModelState.IsValid)
+            {
+                repo.EditDept(department);
+                return Ok();
+            }
+            return BadRequest();
             
-    //     }
-    //     [HttpDelete]
-    //     [Route("Delete")]
-    //      public IActionResult Delete()
-    //     {
+        }
+        [HttpDelete]
+        [Route("Delete")]
+         public IActionResult Delete(int id)
+        {
             
-    //     }
-    //      public IActionResult FindDept()
-    //     {
-            
-    //     }
+            if(ModelState.IsValid)
+            {
+                repo.DeleteDept(id);
+                return Ok();
+            }
+            return BadRequest();
+        }
+         
 
     }
 }
