@@ -17,9 +17,7 @@ public partial class EmsDbContext : DbContext
 
     public virtual DbSet<Department> Departments { get; set; }
 
-    public virtual DbSet<Dept> Depts { get; set; }
-
-    public virtual DbSet<Dept1> Depts1 { get; set; }
+    
 
     public virtual DbSet<Employee> Employees { get; set; }
 
@@ -40,39 +38,39 @@ public partial class EmsDbContext : DbContext
                 .IsUnicode(false);
         });
 
-        modelBuilder.Entity<Dept>(entity =>
-        {
-            entity
-                .HasNoKey()
-                .ToTable("Dept");
+        // modelBuilder.Entity<Dept>(entity =>
+        // {
+        //     entity
+        //         .HasNoKey()
+        //         .ToTable("Dept");
 
-            entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.Loaction)
-                .HasMaxLength(50)
-                .IsUnicode(false)
-                .HasColumnName("loaction");
-            entity.Property(e => e.Name)
-                .HasMaxLength(50)
-                .IsUnicode(false)
-                .HasColumnName("name");
-        });
+        //     entity.Property(e => e.Id).HasColumnName("id");
+        //     entity.Property(e => e.Loaction)
+        //         .HasMaxLength(50)
+        //         .IsUnicode(false)
+        //         .HasColumnName("loaction");
+        //     entity.Property(e => e.Name)
+        //         .HasMaxLength(50)
+        //         .IsUnicode(false)
+        //         .HasColumnName("name");
+        // });
 
-        modelBuilder.Entity<Dept1>(entity =>
-        {
-            entity
-                .HasNoKey()
-                .ToTable("Depts");
+        // modelBuilder.Entity<Dept1>(entity =>
+        // {
+        //     entity
+        //         .HasNoKey()
+        //         .ToTable("Depts");
 
-            entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.Location)
-                .HasMaxLength(50)
-                .IsUnicode(false)
-                .HasColumnName("location");
-            entity.Property(e => e.Name)
-                .HasMaxLength(50)
-                .IsUnicode(false)
-                .HasColumnName("name");
-        });
+        //     entity.Property(e => e.Id).HasColumnName("id");
+        //     entity.Property(e => e.Location)
+        //         .HasMaxLength(50)
+        //         .IsUnicode(false)
+        //         .HasColumnName("location");
+        //     entity.Property(e => e.Name)
+        //         .HasMaxLength(50)
+        //         .IsUnicode(false)
+        //         .HasColumnName("name");
+        // });
 
         modelBuilder.Entity<Employee>(entity =>
         {
