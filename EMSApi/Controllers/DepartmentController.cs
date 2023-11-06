@@ -26,22 +26,27 @@ namespace EMSApi.Controllers{
             if(ModelState.IsValid)
             {
                 repo.AddDept(department);
-                return Created
+                return Created("Record Added",department);
 
             }
+            return BadRequest();
         }
-         public IActionResult Put()
-        {
+    //     [HttpPost]
+    //     [Route("Edit")]
+    //      public IActionResult Put()
+    //     {
             
-        }
-         public IActionResult Delete()
-        {
+    //     }
+    //     [HttpDelete]
+    //     [Route("Delete")]
+    //      public IActionResult Delete()
+    //     {
             
-        }
-         public IActionResult FindDept()
-        {
+    //     }
+    //      public IActionResult FindDept()
+    //     {
             
-        }
+    //     }
 
     }
 }
