@@ -3,9 +3,15 @@ namespace EMSApi.Models;
 
 public interface IDept
 {
-    public void GetAll();
-    public void GetById();
-    public void GetAll();
-    public void GetAll();
+    List<Department> GetDepartments();
+    Department FindDept(int id);
+    void AddDept(Department dept);
+    void EditDept(Department dept);
+    void DeleteDept(int id);
+    // public void GetAll();
+    // public void GetById();
+    // public void Insert();
+    // public void Update();
+    // public void Delete();
 
 }
