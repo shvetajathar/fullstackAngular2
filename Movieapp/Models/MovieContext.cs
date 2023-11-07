@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Movieapp.ViewModel;
- namespace Movieapp.Models{
+ namespace Movieapp.Models;
     public class MovieContext:DbContext
     {
         public virtual DbSet<Movie> Movies{get;set;}
@@ -23,5 +23,9 @@ using Movieapp.ViewModel;
                 optionsBuilder.UseSqlServer("User ID=sa;password=examlyMssql@123;server=localhost;Database=EntDb;trusted_connection=false;Persist Security Info=False;Encrypt=False;");
             }
         }
+            protected override void OnModelCreating(ModelBuilder builder)
+            {
+                builder.Entity<Movie_VM>().HasNoKey();
+            }
     }
- }
+ 
