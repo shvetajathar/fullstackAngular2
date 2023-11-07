@@ -1,9 +1,11 @@
 using Microsoft.EntityFrameworkCore;
+using Movieapp.ViewModel;
  namespace Movieapp.Models{
     public class MovieContext:DbContext
     {
         public virtual DbSet<Movie> Movies{get;set;}
         public virtual DbSet<Detail> Details{get;set;}
+        public virtual DbSet<Movie_VM> Movie_VMs{get;set;}
 
         public MovieContext()
         {

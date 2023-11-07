@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore.SqlServer;
 using Movieapp.Models;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using Movieapp.ViewModel;
 
 namespace Movieapp.Controllers
 {
@@ -12,6 +13,13 @@ namespace Movieapp.Controllers
     public class MovieController:ControllerBase
     {
         MovieContext context=new MovieContext();
+        [HttpGet]
+        [Route("ShowMovies")]
+        public IActionResult GetShowMovies()
+        {
+
+        }
+        
         [HttpGet]
         [Route("DisplayMovies/Rating/Year")]
         public IActionResult GetDisplayMovies(int rating,int year)
