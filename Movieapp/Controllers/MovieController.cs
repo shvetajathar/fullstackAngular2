@@ -17,6 +17,8 @@ namespace Movieapp.Controllers
         [Route("ShowMovies")]
         public IActionResult GetShowMovies()
         {
+            var data=context.Movie_VMs.FromSqlInterpolated<Movie_VM>($"MovieInfo");
+            return Ok(data);
 
         }
         

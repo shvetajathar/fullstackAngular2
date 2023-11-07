@@ -1,5 +1,5 @@
 namespace Movieapp.ViewModel;
-{
+
 
 
 public class Movie_VM
@@ -11,5 +11,4 @@ public class Movie_VM
     public int YearRelease{get;set;}
 
 
-}
 }
