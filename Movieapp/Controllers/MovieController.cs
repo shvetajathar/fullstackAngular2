@@ -13,7 +13,7 @@ namespace Movieapp.Controllers
     {
         MovieContext context=new MovieContext();
         [HttpGet]
-        [Route("DisplayMovies/{Rating}/{Year}")]
+        [Route("DisplayMovies/Rating/Year")]
         public IActionResult GetDisplayMovies(int rating,int year)
         {
             var data=from m in context.Movies where m.Rating==rating && m.YearRelease==year select m;
