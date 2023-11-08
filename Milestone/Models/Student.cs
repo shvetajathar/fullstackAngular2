@@ -9,7 +9,7 @@ public class Student
     [Key]
     public int Id{get;set;}
     public string ?Name{get;set;}
-    [DataType(DataType)]
+    [DataType(DataType.EmailAddress)]
     public string ?Email{get;set;}
     public int ?BatchId{get;set;}
 
