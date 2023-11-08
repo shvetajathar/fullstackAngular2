@@ -15,10 +15,15 @@ public class BatchController:Controller{
         context=_context;
     }
 
-    
-    
-    
+    public IActionResult BatchIsFull()
+    {
+        var data=context.Batchs.ToList();
+        if(data.Count()>5)
+        {
+            throw new FrenchTuitionException("Batch is full.");
+        }
+        return View();
 
-    
+    }
 
 }

@@ -70,6 +70,13 @@ public class StudentController:Controller{
         return RedirectToAction("Index");
     }
 
+    public IActionResult BatchEnrollmentForm(int id,string name,string Email)
+    {
+        Student s=new Student();
+        s.BatchId=id;
+        s
+    }
+
     
 
 
