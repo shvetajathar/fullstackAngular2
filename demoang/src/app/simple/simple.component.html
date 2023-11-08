@@ -11,4 +11,12 @@
     <b>Not Ready</b>
 </ng-template> 
 <hr>
-<ul *ngFor=""let day of weekdays
+<ul *ngFor="let day of weekdays">
+    <ng-container *ngIf="(day=='sunday' || day=='saturday');else elseTemplate">
+        <li style = "color:red">{{day}} is a weekend</li>
+    </ng-container>
+    <ng-template #elseTemplate>
+        <li style = "color:blue">{{day}} is a working day</li>
+    </ng-template>
+
+</ul>
