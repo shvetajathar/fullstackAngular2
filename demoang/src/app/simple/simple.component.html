@@ -3,3 +3,12 @@
     <li>{{i+1}}--{{day}}</li>
     
 </ul>
+
+<ng-container *ngIf="age>=26;else elseTemplate">
+    <b>Suitable for Marriage</b>
+</ng-container>
+<ng-template #elseTemplate>
+    <b>Not Ready</b>
+</ng-template> 
+<hr>
+<ul *ngFor=""let day of weekdays
