@@ -34,4 +34,20 @@ City:{{emp.city}}
         <th>Salary</th>
         <th>City</th>
         </thead>
-        
+        <tbody>
+            <tr *ngFor="let emp of emplist">
+                <td>
+                    {{emp.id}}
+                </td>
+                <td>
+                    {{emp.name}}
+                </td>
+                <td>
+                    {{emp.salary}}
+                </td>
+                <td>
+                    {{emp.city}}
+                </td>
+            </tr>
+            </tbody>
+</table>
