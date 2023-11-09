@@ -10,7 +10,7 @@ export class DemoComponent implements OnInit {
   age:number=20
   fno:number=90
   sno:number=30
-  city:string=''
+  city:string='Mumbai'
   Sum():number{
     return this.fno+this.sno
   }
