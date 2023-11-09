@@ -18,3 +18,11 @@ tr:nth-child(even)
 {
     background-color: lightgreen;
 }
+tr:nth-child(odd)
+{
+    background-color:lightpink;
+}
+tr:hover{
+    background-color: yellow;
+    color:blueviolet;
+}
