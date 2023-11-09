@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DemoComponent implements OnInit {
   name:string='Tom'
-  age:number=33
+  age:number=20
   fno:number=90
   sno:number=30
+  city:string=''
   Sum():number{
     return this.fno+this.sno
   }
