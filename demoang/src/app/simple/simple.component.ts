@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee } from '../employee';
-import { MessageService } from './message.service';
+import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-simple',
@@ -29,7 +29,9 @@ export class SimpleComponent implements OnInit {
     return total
   }
   todaydate:number=Date.now();
-  constructor(private) { }
+  constructor(private msgservice:MessageService) { 
+  }
+  msg=this.msgservice.DisplayService("Tom")
 
   ngOnInit() {
   }
