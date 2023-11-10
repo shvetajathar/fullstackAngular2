@@ -40,14 +40,17 @@ City:{{emp.city}}
                     {{emp.id}}
                 </td>
                 <td>
-                    {{emp.name}}
+                    {{emp.name | uppercase}}
                 </td>
                 <td>
-                    {{emp.salary}}
+                    {{emp.salary | currency:'INR'}}
                 </td>
                 <td>
-                    {{emp.city}}
+                    {{emp.city | lowercase}}
                 </td>
             </tr>
             </tbody>
 </table>
+<b>Total={{GetTotal()}}</b>
+<h2>Date Processing</h2>
+<
