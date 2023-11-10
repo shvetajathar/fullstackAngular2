@@ -51,6 +51,11 @@ City:{{emp.city}}
             </tr>
             </tbody>
 </table>
-<b>Total={{GetTotal()}}</b>
+<b>Total = {{GetTotal()}}</b>
 <h2>Date Processing</h2>
-<
+<p>Date Without Pipe :{{todaydate}}</p>
+<p>Date With Pipe :{{todaydate| date}}</p>
+<p>Date Full :{{todaydate | date : 'Fulldate'}}</p>
+<p>Date Medium :{{todaydate | date : 'medium'}}</p>
+<p>Date Short :{{todaydate | date : 'short'}}</p>
+<p>Time :{{todaydate | date:'hh:mm:ss'}}</p>
