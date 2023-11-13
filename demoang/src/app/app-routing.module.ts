@@ -6,7 +6,10 @@ import { RegisterComponent } from './register/register.component';
 import { SimpleComponent } from './simple/simple.component';
 
 const routes: Routes = [
-  
+  {path:'demo',component:DemoComponent},
+  {path:'emp',component:EmpComponent},
+  {path:'register',component:RegisterComponent},
+  {path:'simple',component:SimpleComponent}
 ];
 
 
