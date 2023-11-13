@@ -1,0 +1,14 @@
+<p>register works!</p>
+
+<hr>
+<form #stdForm='ngForm' (ngSubmit)="RegisterStudent(stdForm)">
+<div>
+    <label for="firstName">First Name</label>
+    <input id="firstName" name="firstName" type="text">
+</div>
+<div>
+    <label for="firstName">First Name</label>
+    <input id="firstName" name="firstName" type="text" ngModel>
+</div>
+
+</form>
