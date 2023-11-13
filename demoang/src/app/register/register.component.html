@@ -4,8 +4,8 @@
 <form #stdForm='ngForm' (ngSubmit)="RegisterStudent(stdForm)">
 <div>
     <label for="firstName">First Name</label>
-    <input id="firstName" name="firstName" type="text" ngModel required #firstName="ngModel>
-    <div *ngIf="firstName.isvalid && (firstName.dirty || firstName.touched)" style="color: red">
+    <input id="firstName" name="firstName" type="text" ngModel required #firstName="ngModel">
+    <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" style="color: red">
     <div *ngIf="firstName.errors.required">
         Name cannot be blank
     </div>
@@ -13,7 +13,15 @@
 </div>
 <div>
     <label for="lastName">Last Name</label>
-    <input id="lastName" name="lastName" type="text" ngModel maxlength="25" minlength="3">
+    <input id="lastName" name="lastName" type="text" ngModel maxlength="25" minlength="3" #lastName="ngModel">
+    <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" style="color: red">
+        <div *ngIf="lastName.errors.maxlength">
+            Name not more than 30 chars
+        </div>
+        <div *ngIf="lastName.errors.minlength">
+            Name should be 5 chars
+        </div>
+        </div>
 </div>
 <div>
     <label for="email">Email</label>
