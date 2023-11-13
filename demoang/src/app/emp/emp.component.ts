@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { FormGroup,FormControl,Validator } from '@angular/forms';
 @Component({
   selector: 'app-emp',
@@ -7,8 +7,28 @@ import { FormGroup,FormControl,Validator } from '@angular/forms';
   styleUrls: ['./emp.component.css']
 })
 export class EmpComponent implements OnInit {
+  
 
   constructor(private formBuilder:FormBuilder) { }
+  empform=this.formBuilder.group({
+    name:['',Validators.required,Validators.maxLength(30)],
+    email:['',Validators.email],
+    city:['',Validators.pattern("[a-zA-z]")],
+    
+  })
+  Save(){
+    console.log()
+  }
+  // empform=this.formBuilder.group({
+  //   firstname:[''],
+  //   age:[''],
+  //   address:this.formBuilder.group({
+  //     Line1:[''],
+  //     City:[''],
+  //     State:['']
+  //   })
+  // })
+
 
   ngOnInit() {
   }
