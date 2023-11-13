@@ -16,8 +16,8 @@
 </div>
 <div>
     <label>Gender</label>
-    <input type="radio" name="gender" value="male" checked[(ngModel)]="gender">Male
-    <input type="radio" name="gender" value="female" checked[(ngModel)]="gender">female
+    <input type="radio" name="gender" value="male" checked [(ngModel)]="gender">Male
+    <input type="radio" name="gender" value="female" [(ngModel)]="gender">female
 </div>
 <div>
     <input type="checkbox" name="ismarried" id="ismarried" [(ngModel)]="ismarried">
@@ -29,8 +29,14 @@
         <option value="1">Mumbai</option>
         <option value="2">Pune</option>
         <option value="3">Delhi</option>
-        <option value="1">Mumbai</option>
+        <option value="4">Chennai</option>
+
     </select>
 </div>
+<div>
+    <input type="submit" value="Save">
+
+</div>
+
 
 </form>
