@@ -17,7 +17,7 @@ export class EmpComponent implements OnInit {
     
   })
   Save(){
-    console.log()
+    console.log(this.empform.value)
   }
   // empform=this.formBuilder.group({
   //   firstname:[''],

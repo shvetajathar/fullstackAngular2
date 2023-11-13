@@ -1,4 +1,29 @@
 <h1>emp works!</h1>
+<hr>
+<form [formGroup]="empform" (ngSubmit)='Save()'>
+    <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" formControlName="name">
+
+    </div>
+    <div>
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" formControlName="email">
+
+    </div>
+
+    <div>
+        <label for="city">City</label>
+        <input type="text" id="city" name="city" formControlName="city">
+
+    </div>
+    <br>
+    <p>
+        <button type="submit">Save</button>
+    </p>
+
+
+</form>
 
 
 
