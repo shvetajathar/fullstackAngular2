@@ -10,9 +10,15 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class FindmovieComponent implements OnInit {
 moviedata:IMovie
+id:number
   constructor(private movieservice:MovieService,private ar:ActivatedRoute) { }
 
   ngOnInit() {
+    const tid=this.ar.snapshot.paramMap.get('id')
+    this.id=Number(tid)
+    this.movieservice.getMovie(this.id).subscribe((data:IMovie)=>{
+      this.moviedata=data
+    })
   }
 
 }
