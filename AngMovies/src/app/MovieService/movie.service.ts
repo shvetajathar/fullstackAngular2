@@ -12,4 +12,8 @@ private url='https://8080-beaddfcabfedbecfabcaaaceeafebeccaddbefddaf.premiumproj
     return this.httpclient.get<any[]>(`${this.url}/listmovies`)
 
     }
+    movie:IMovie
+    getMovie(id:number):Observable<IMovie>{
+      return this.httpclient.get<IMovie>(this.url + '/ListMovies/' + id)
+    }
 }
