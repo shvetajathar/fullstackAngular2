@@ -11,5 +11,5 @@ private url='https://8080-beaddfcabfedbecfabcaaaceeafebeccaddbefddaf.premiumproj
   getAllMovies():Observable<any[]>{
     return this.httpclient.get<any[]>(`${this.url}/listmovies`)
 
-}
+    }
 }
