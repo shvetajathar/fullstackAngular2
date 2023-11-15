@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class MovieService {
-private url='https://8080-beaddfcabfedbecfabcaaaceeafebeccaddbefddaf.premiumproject.examly.io/Movie'
+private url='https://8080-beaddfcabfedbecfabcaaaceeafebeccaddbefddaf.premiumproject.examly.io/Movie)'
   constructor(private httpclient:HttpClient) { }
   getAllMovies():Observable<any[]>{
     return this.httpclient.get<any[]>(`${this.url}/listmovies`)
