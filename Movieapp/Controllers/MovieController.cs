@@ -126,12 +126,12 @@ namespace Movieapp.Controllers
         public IActionResult Delete(int id)
         {
             try{
-                var detail=context.Details.Where(d=>d.MovieId==id);
-                if(detail.Count() !=0)
-                {
-                    throw new Exception("Cannot delete mocie");
-                }
-                var data=context.Movies.Find(id);
+                // var detail=context.Details.Where(d=>d.MovieId==id);
+                // if(detail.Count() != 0)
+                // {
+                //     throw new Exception("Cannot delete mocie");
+                // }
+                var data =context.Movies.Find(id);
                 context.Movies.Remove(data);
                 context.SaveChanges();
                 return Ok();

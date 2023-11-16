@@ -27,7 +27,7 @@ getMovie(id:number)
   }
 
 
-  saveData(movie:IMovie)
+  DeleteData(movie:IMovie)
   {
     this.moviedata=movie
     this.ms.deleteMovie(this.id).subscribe(()=>{
