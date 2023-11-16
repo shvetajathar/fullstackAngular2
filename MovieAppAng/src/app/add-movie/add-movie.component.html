@@ -1,1 +1,9 @@
-<p>add-movie works!</p>
+<h2>Add Record</h2>
+
+<hr>
+<form (ngSubmit)="saveData(moviedata)" #movieform="ngForm">
+    <div>
+        <label for="name">Movie Name</label>
+        <input type="text" id="name" name="name" placeholder="enter movie name" [(ngModel)]="moviedata.name">
+    </div>
+</form>
