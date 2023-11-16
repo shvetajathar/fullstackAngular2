@@ -23,5 +23,13 @@ export class EditmovieComponent implements OnInit {
   {
       this.ms.getMovie(id).subscribe((data:IMovie)=>this.moviedata=data)
   }
+  saveData(movie:IMovie)
+  {
+    this.moviedata=movie
+    this.ms.editMovie(this.moviedata).subscribe(()=>{
+      alert("record Edited")
+      this.route.navigate(['/listmovies'])
+    })
+  }
 
 }
