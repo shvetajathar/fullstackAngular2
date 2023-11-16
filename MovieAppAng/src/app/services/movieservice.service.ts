@@ -6,6 +6,16 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class MovieserviceService {
+  private url='https://8080-beaddfcabfedbecfabcaaaceeafebeccaddbefddaf.premiumproject.examly.io/Movie)'
 
-  constructor() { }
+  constructor(private httpclient:HttpClient) { }
+
+  getAllMovies():Observable<any[]>
+  {
+      return this.httpclient.get<any[]>(this.url+'/ListMovies')
+  }
+  getMovie(id:number):Observable<IMovie>
+  {
+      return this.httpclient.get<IMovie>(this.url+'/ListMovies/'+id)
+  }
 }
