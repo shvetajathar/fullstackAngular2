@@ -11,7 +11,7 @@ import { IMovie } from '../model/imovie';
 export class DeletemovieComponent implements OnInit {
 
   constructor(private ms:MovieserviceService,private route:Router,private ar:ActivatedRoute) { }
-moviedata:IMovie
+moviedata:IMovie={id:0,name:'',yearRelease:0,rating:0}
 id:number
 
 
@@ -21,14 +21,19 @@ ngOnInit() {
   this.id=Number(tid)
   this.getMovie(this.id)
 }
+getMovie(id:number)
+  {
+      this.ms.getMovie(id).subscribe((data:IMovie)=>this.moviedata=data)
+  }
 
-saveData(movie:IMovie)
-{
-  this.moviedata=movie
-  this.ms.deleteMovie(this.moviedata).subscribe(()=>{
-    alert("record deleted")
-    this.route.navigate(['/listmovies'])
-  })
-}
+
+  saveData(movie:IMovie)
+  {
+    this.moviedata=movie
+    this.ms.deleteMovie(this.id).subscribe(()=>{
+      alert("record deleted")
+      this.route.navigate(['/listmovies'])
+    })
+  }
 
 }
