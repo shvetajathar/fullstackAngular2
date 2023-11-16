@@ -8,6 +8,8 @@ import { FindmovieComponent } from './findmovie/findmovie.component';
 import { MenuComponent } from './menu/menu.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddMovieComponent } from './add-movie/add-movie.component';
+import { EditmovieComponent } from './editmovie/editmovie.component';
+import { DeletemovieComponent } from './deletemovie/deletemovie.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { AddMovieComponent } from './add-movie/add-movie.component';
     ListmovieComponent,
     FindmovieComponent,
     MenuComponent,
-    AddMovieComponent
+    AddMovieComponent,
+    EditmovieComponent,
+    DeletemovieComponent
   ],
   imports: [
     BrowserModule,
