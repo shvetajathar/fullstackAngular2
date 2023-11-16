@@ -15,7 +15,9 @@
                     <td>{{m.yearRelease}}</td>
                     <td>{{m.rating}}</td>
                     <td>
-                        <a [routerLink]="['/find/',m.id]">Details</a>
+                        <a [routerLink]="['/find/',m.id]">Details</a>&nbsp;
+                        <a [routerLink]="['/edit/',m.id]">Edit</a>&nbsp;
+                        <a [routerLink]="['/delete/',m.id]">Delete</a>&nbsp;
                     </td>
 
 
