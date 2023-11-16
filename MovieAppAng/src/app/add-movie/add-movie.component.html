@@ -4,6 +4,18 @@
 <form (ngSubmit)="saveData(moviedata)" #movieform="ngForm">
     <div>
         <label for="name">Movie Name</label>
-        <input type="text" id="name" name="name" placeholder="enter movie name" [(ngModel)]="moviedata.name">
+        <input type="text" id="name" name="name" placeholder="enter movie Name" [(ngModel)]="moviedata.name" required #name="ngModel">
     </div>
+    <div>
+        <label for="rating">Rating</label>
+        <input type="text" id="rating" name="rating" placeholder="enter Rating" [(ngModel)]="moviedata.rating"  #rating="ngModel" min="1" max="5">
+    </div>
+    <div>
+        <label for="yearRelease">Movie yearRelease</label>
+        <input type="text" id="yearRelease" name="yearRelease" placeholder="enter YearRelease" [(ngModel)]="moviedata.yearRelease" required #yearRelease="ngModel">
+    </div>
+    <br><br>
+    <p>
+        <input type="submit" value="Save" class="btn btn-Info" [disabled]="!movieform.valid">
+    </p>
 </form>
