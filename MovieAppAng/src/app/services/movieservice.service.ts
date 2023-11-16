@@ -18,4 +18,5 @@ export class MovieserviceService {
   {
       return this.httpclient.get<IMovie>(this.url+'/listmovies/'+id)
   }
+  AddMovie(movie:Movie)
 }
