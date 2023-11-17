@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddMovieComponent } from './add-movie/add-movie.component';
 import { EditmovieComponent } from './editmovie/editmovie.component';
 import { DeletemovieComponent } from './deletemovie/deletemovie.component';
+import { ReactFormComponent } from './react-form/react-form.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { DeletemovieComponent } from './deletemovie/deletemovie.component';
     MenuComponent,
     AddMovieComponent,
     EditmovieComponent,
-    DeletemovieComponent
+    DeletemovieComponent,
+    ReactFormComponent
   ],
   imports: [
     BrowserModule,
