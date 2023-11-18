@@ -3,6 +3,9 @@ import { IMovie } from '../model/imovie';
 import { Observable } from 'rxjs';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Idetails } from '../model/idetails';
+import { HttpResponse } from '@angular/common/http';
+import{ catchErr}
+// import { ErrorHandler } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
