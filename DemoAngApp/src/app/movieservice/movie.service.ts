@@ -7,12 +7,16 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class MovieService {
-  private url='beaddfcabfedbecfabcaaaceeafebeccaddbefddaf.premiumproject.examly.io/Movie)'
-  private url2='beaddfcabfedbecfabcaaaceeafebeccaddbefddaf.premiumproject.examly.io/Detail'
+  private url='https://8080-beaddfcabfedbecfabcaaaceeafebeccaddbefddaf.premiumproject.examly.io/Movie)'
+  private url2='https://8080-beaddfcabfedbecfabcaaaceeafebeccaddbefddaf.premiumproject.examly.io/Detail'
 
   constructor(private httpclient:HttpClient) { }
   getAllMovies():Observable<any[]>
   {
     return this.httpclient.get<any[]>(this.url+'/listmovies')
+  }
+  addMovie(moviedata:IMovie):Observable<IMovie>
+  {
+    return this.httpclient.post<IMovie>(this.url + '/AddMovie',moviedata, this.httpOptions)
   }
 }
