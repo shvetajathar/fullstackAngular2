@@ -15,7 +15,7 @@ const routes: Routes = [
   {path:'edit/:id',component:EditmovieComponent},
   {path:'delete/:id',component:DeletemovieComponent},
   {path:'reactform',component:ReactFormComponent},
-  {path:'addDetails',component:CreatedetailsComponent}
+  {path:'details',component:CreatedetailsComponent}
   
 
 

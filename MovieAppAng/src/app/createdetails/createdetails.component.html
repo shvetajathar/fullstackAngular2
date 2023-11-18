@@ -9,11 +9,28 @@
         </div>
         <div>
             <label for="movieid">Movieid</label>
-           <select id="movieid" name="movieid" [(ngModel)]=""
+           <select id="movieid" name="movieid" [(ngModel)]="detailsdata.movieid" class="form-control">
+                <option *ngFor="let dt of showdata" [value]="sd.id">
+                    {{dt.name}}
+                </option>
+           </select>
         </div>
         <div>
             <label for="gender">Gender</label>
             <input type="text" id="gender" name="gender" [(ngModel)]="detailsdata.gender" #gender="ngModel" class="form-control">
         </div>
+        <div>
+            <label for="role">Role</label>
+           <select id="role" name="role" [(ngModel)]="detailsdata.role" class="form-control">
+                <option value="hero">Hero</option>
+                <option value="heroin">heroin</option>
+                <option value="villain">villain</option>
+                <option value="comedian">comedian</option>
+           </select>
+        </div>
+        <br><br>
+        <p>
+            <input type="submit" value="Save" class="btn btn-success" [disabled]="!detailsform.valid">
+        </p>
     </div>
 </form>
