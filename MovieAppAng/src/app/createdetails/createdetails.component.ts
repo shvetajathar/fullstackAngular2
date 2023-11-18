@@ -26,6 +26,7 @@ export class CreatedetailsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.ms.getAllMovies().subscribe(data=>{this.showdata.push(...data)})
   }
 
 }
