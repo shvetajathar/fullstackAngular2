@@ -4,7 +4,7 @@
             <td>Id</td>
             <td>Name</td>
             <td>YearRelease</td>
-            <td>Id</td>
+            <td>Rating</td>
         </thead>
         <tbody>
             <tr *ngFor="let m of moviedata">
@@ -12,7 +12,9 @@
                 <td>{{m.name}}</td>
                 <td>{{m.yearRelease}}</td>
                 <td>{{m.rating}}</td>
-                <a [ro]
+                <td>
+                <a routerLink="listmovies">All Movies</a>
+            </td>
             </tr>
         </tbody>
     </table>
