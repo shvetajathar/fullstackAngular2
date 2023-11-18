@@ -7,14 +7,15 @@ import { EditmovieComponent } from './editmovie/editmovie.component';
 import { DeletemovieComponent } from './deletemovie/deletemovie.component';
 import { ReactFormComponent } from './react-form/react-form.component';
 
-
+import { CreatedetailsComponent } from './createdetails/createdetails.component';
 const routes: Routes = [
   {path:'listmovies',component:ListmovieComponent},
   {path:'find/:id',component:FindmovieComponent},
   {path:'add',component:AddMovieComponent},
   {path:'edit/:id',component:EditmovieComponent},
   {path:'delete/:id',component:DeletemovieComponent},
-  {path:'reactform',component:ReactFormComponent}
+  {path:'reactform',component:ReactFormComponent},
+  {path:'addDetails',component:create}
   
 
 
