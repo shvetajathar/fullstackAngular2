@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { ListmoviesComponent } from './listmovies/listmovies.component';
 import { FormsModule,NgForm } from '@angular/forms';
 import { AddmovieComponent } from './addmovie/addmovie.component';
+import { MenuComponent } from './menu/menu.component';
 // import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
     ListmoviesComponent,
-    AddmovieComponent
+    AddmovieComponent,
+    MenuComponent
     // ReactiveFormsModule
   ],
   imports: [
