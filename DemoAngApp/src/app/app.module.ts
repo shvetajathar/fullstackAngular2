@@ -7,13 +7,15 @@ import { ListmoviesComponent } from './listmovies/listmovies.component';
 import { FormsModule,NgForm } from '@angular/forms';
 import { AddmovieComponent } from './addmovie/addmovie.component';
 import { MenuComponent } from './menu/menu.component';
+import { EditmovieComponent } from './editmovie/editmovie.component';
 // import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
     ListmoviesComponent,
     AddmovieComponent,
-    MenuComponent
+    MenuComponent,
+    EditmovieComponent
     // ReactiveFormsModule
   ],
   imports: [
