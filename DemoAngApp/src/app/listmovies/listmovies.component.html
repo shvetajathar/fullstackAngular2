@@ -1,1 +1,17 @@
-<p>listmovies works!</p>
+<div class="container jumbotron">
+    <table class="table">
+        <thead>
+            <td>Id</td>
+            <td>Name</td>
+            <td>YearRelease</td>
+            <td>Id</td>
+        </thead>
+        <tbody>
+            <tr *ngFor="let m of moviedata">
+                <td>{{m.id}}</td>
+                <td>{{m.name}}</td>
+                <td>{{m.yearRelease}}</td>
+                <td>{{m.rating}}</td>
+            </tr>
+        </tbody>
+    </table>
