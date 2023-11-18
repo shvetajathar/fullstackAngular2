@@ -10,8 +10,8 @@
         <div>
             <label for="movieid">Movieid</label>
            <select id="movieid" name="movieid" [(ngModel)]="detailsdata.movieid" class="form-control">
-                <option *ngFor="let dt of showdata" [value]="sd.id">
-                    {{dt.name}}
+                <option *ngFor="let dt of showdata" [value]="dt.id">
+                    {{dt.id}}
                 </option>
            </select>
         </div>

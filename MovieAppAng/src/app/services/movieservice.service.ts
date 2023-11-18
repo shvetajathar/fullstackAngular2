@@ -34,6 +34,6 @@ export class MovieserviceService {
   }
   addDetails(detailsdata:Idetails):Observable<Idetails>
   {
-    return this.httpclient.post<Idetails>(this.url2 + '/AddDetails',detailsdata,this.httpOptions)
+    return this.httpclient.post<Idetails>(this.url2 + '/AddDetail',detailsdata,this.httpOptions)
   }
 }
