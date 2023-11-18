@@ -12,8 +12,15 @@ export class AddmovieComponent implements OnInit {
   moviedata:IMovie={id:0,name:'',yearRelease:0,rating:0}
 
   constructor(private ms:MovieService,private route:Router) { }
-  saveData(moviedata:IMovie):void{
-    this.moviedata=mo
+  saveData(movie:IMovie):void{
+    this.moviedata=movie
+    this.ms.addMovie(this.moviedata).subscribe(
+      ()=>{
+        alert('Record Added Successfully.')
+        this.route.navigate(['/listmovies'])
+      }
+    )
+
   }
 
   ngOnInit() {
