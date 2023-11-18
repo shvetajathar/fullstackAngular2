@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IMovie } from '../model/imovie';
-import { HttpClient } from '@angular/common/http';
-
+import { HttpClient,HttpHeaders } from '@angular/common/http';
+// import { HttpResponse } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
@@ -15,6 +15,7 @@ export class MovieService {
   {
     return this.httpclient.get<any[]>(this.url+'/listmovies')
   }
+  httpOptions={headers:new HttpHeaders({'Content-type':'application/json'})}
   addMovie(moviedata:IMovie):Observable<IMovie>
   {
     return this.httpclient.post<IMovie>(this.url + '/AddMovie',moviedata, this.httpOptions)
