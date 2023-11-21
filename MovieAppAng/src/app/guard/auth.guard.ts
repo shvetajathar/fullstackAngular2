@@ -16,7 +16,7 @@ export class AuthGuard implements CanActivate {
         return true;
       }
       alert('You don\'t have permission to view this page');
-    return false;
+    return true;
   }
   
 }
