@@ -25,3 +25,7 @@ Show(){
   this.route.navigate(['/listmovies'])
 }
 }
+
+
+
+
