@@ -29,7 +29,7 @@ builder.Services.AddDbContext<AppdContext>(option=>{
 });
 builder.Services.AddAuthentication(x=>{
     x.DefaultAuthenticateScheme=JwtBearerDefaults.AuthenticationScheme;
-    x.DefaultChallengeScheme=false;
+    x.DefaultChallengeScheme=JwtBearerDefaults.AuthenticationScheme;
 }).AddJwtBearer(x=>{
     x.RequireHttpsMetadata=false;
     x.SaveToken=true;
