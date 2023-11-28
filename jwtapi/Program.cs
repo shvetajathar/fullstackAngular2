@@ -1,4 +1,9 @@
-// using Microsoft.AspNetCore.Authentication.JwtBearer;
+using jwtapi.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,9 +11,44 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddCors(options=>{
+    
+    options.AddPolicy("MyPolicy",builder=>builder.WithOrigins("http://localhost:4200","http://localhost:4200")
+    .AllowAnyMethod()
+    .AllowAnyHeader()
+    .AllowCredentials());
+
+   
+});
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddDbContext<AppdContext>(option=>{
+    option.UseSqlServer(builder.Configuration.GetConnectionString("mycon"));
+
+});
+builder.Services.AddAuthentication(x=>{
+    x.RequireHttpsMetadata=false,
+    x.SaveToken=true,
+    x.TokenValidationParameters=new Token
+
+
+})
+    .AddJwtBearer(options=>
+    {
+        options.TokenValidationParameters=new TokenValidationParameters
+        {
+            ValidateIssuer=true,
+            ValidateAudience=true,
+            ValidateLifetime=true,
+            ValidateIssuerSigningKey=true,
+            ValidIssuer="http://0.0.0.0:8080",
+            ValidAudience="http://0.0.0.0:8080",
+            IssuerSigningKey=new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"))
+        };
+    });
+
+
 
 var app = builder.Build();
 
