@@ -25,7 +25,7 @@ namespace jwtapi.Models{
         }
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<User>().ToTable("Users");
+            builder.Entity<User>().ToTable("users");
         }
     }
 }
