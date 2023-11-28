@@ -11,6 +11,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
 
+
 namespace jwtapi.Controllers
 {
     [ApiController]
@@ -52,7 +53,7 @@ namespace jwtapi.Controllers
             userObj.Role="user";
             userObj.Token="";
             await _authContext.Users.AddAsync(userObj);
-            await _authContext.SaveChanges();
+            await _authContext.SaveChangesAsync();
             return Ok();
         
         }
@@ -67,14 +68,14 @@ namespace jwtapi.Controllers
 
 
             });
-            var credentials=new Signingcredentials(new SymmetricSecurityKey(key),
+            var credentials=new SigningCredentials(new SymmetricSecurityKey(key),
             SecurityAlgorithms.HmacSha256);
             var tokenDescriptor=new SecurityTokenDescriptor{
                 Subject=identity,
                 Expires=DateTime.Now.AddDays(2),
                 SigningCredentials=credentials
             };
-            var token=jwtTokenHandler.CreateRefreshToken(tokenDescriptor);
+            var token=jwtTokenHandler.CreateToken(tokenDescriptor);
             return jwtTokenHandler.WriteToken(token);
 
   
@@ -82,6 +83,13 @@ namespace jwtapi.Controllers
         private string CreateRefreshToken()
         {
             var tokenBytes=RandomNumberGenerator.GetBytes(64);
+            var refreshtoken=Convert.ToBase64String(tokenBytes);
+            var tokenInuser=_authContext.Users.Any(a=>a.RefreshToken==refreshtoken);
+            if(tokenInuser)
+            {
+                return CreateRefreshToken();
+            }
+            return refreshtoken;
         }
 }
 }
