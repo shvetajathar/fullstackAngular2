@@ -44,6 +44,44 @@ namespace jwtapi.Controllers
             });
 
         }
+        [HttpPost("register")]
+        public async Task<IActionResult> AddUser([FromBody] User userObj)
+        {
+            if(userObj==null) return BadRequest();
+            //if any other validation is required before storing in database do it here
+            userObj.Role="user";
+            userObj.Token="";
+            await _authContext.Users.AddAsync(userObj);
+            await _authContext.SaveChanges();
+            return Ok();
         
-    }
+        }
+
+        private string createJwt(User user)
+        {
+            var jwtTokenHandler = new JwtSecurityTokenHandler();
+            var key=Encoding.ASCII.GetBytes("ltimindtree...");
+            var identity=new ClaimsIdentity(new Claim[]{
+                new Claim(ClaimTypes.Role,user.Role),
+                new Claim(ClaimType.Name,$"{user.UserName}")
+
+
+            });
+            var credentials=new Signingcredentials(new SymmetricSecurityKey(key),
+            SecurityAlgorithms.HmacSha256);
+            var tokenDescriptor=new SecurityTokenDescriptor{
+                Subject=identity,
+                Expires=DateTime.Now.AddDays(2),
+                SigningCredentials=credentials
+            };
+            var token=jwtTokenHandler.CreateRefreshToken(tokenDescriptor);
+            return jwtTokenHandler.WriteToken(token);
+
+  
+        }
+        private string CreateRefreshToken()
+        {
+            var tokenBytes=RandomNumberGenerator.GetBytes(64);
+        }
+}
 }
