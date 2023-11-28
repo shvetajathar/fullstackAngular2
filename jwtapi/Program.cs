@@ -28,28 +28,22 @@ builder.Services.AddDbContext<AppdContext>(option=>{
 
 });
 builder.Services.AddAuthentication(x=>{
-    x.RequireHttpsMetadata=false,
-    x.SaveToken=true,
-    x.TokenValidationParameters=new Token
+    x.DefaultAuthenticateScheme=JwtBearerDefaults.AuthenticationScheme;
+    x.DefaultChallengeScheme=false;
+}).AddJwtBearer(x=>{
+    x.RequireHttpsMetadata=false;
+    x.SaveToken=true;
+    x.TokenValidationParameters=new TokenValidationParameters{
+        ValidateIssuerSigningKey=true,
+        IssuerSigningKey=new SymmetricSecurityKey(Encoding.UTF8.GetBytes("LTIMindtree...")),
+        ValidateAudience=false,
+        ValidateIssuer=false,
+        ClockSkew=TimeSpan.Zero
+    
 
-
-})
-    .AddJwtBearer(options=>
-    {
-        options.TokenValidationParameters=new TokenValidationParameters
-        {
-            ValidateIssuer=true,
-            ValidateAudience=true,
-            ValidateLifetime=true,
-            ValidateIssuerSigningKey=true,
-            ValidIssuer="http://0.0.0.0:8080",
-            ValidAudience="http://0.0.0.0:8080",
-            IssuerSigningKey=new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"))
-        };
-    });
-
-
-
+    };
+});
+    
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -60,6 +54,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCors("MyPolicy");
+app.UseAuthentication();
 
 app.UseAuthorization();
 
