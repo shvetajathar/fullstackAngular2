@@ -1,1 +1,21 @@
-<p>dashboard works!</p>
+<h2>List of Users</h2>
+<hr>
+<table border="1">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Username</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users;let i=index">
+            <td>{{i+1}}</td>
+            <td>{{user.firstname}}</td>
+            <td></td>
+            
+        </tr>
+    </tbody>
+</table>
