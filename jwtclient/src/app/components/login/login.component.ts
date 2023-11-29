@@ -9,10 +9,18 @@ import { FormBuilder,FormGroup,Validators } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  public loginform:FormGroup
+  type:string='password'
+  isText:boolean=false
 
-  constructor() { }
+  constructor(private fb:FormBuilder,private auth:AuthService,private router:Router) { }
 
   ngOnInit() {
+    this.loginform=this.fb.group({
+      username:['',Validators.required],
+      password:['',Validators.required]
+
+    })
   }
 
 }
