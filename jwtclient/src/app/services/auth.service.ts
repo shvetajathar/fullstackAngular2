@@ -11,7 +11,8 @@ export class AuthService {
   constructor(private httpclient:HttpClient,private router:Router) { }
   isLoggedIn():boolean
   {
-    return false;
+
+    return !! localStorage.getItem('token')
   }
   signUp(userObj:any)
   {
@@ -28,6 +29,23 @@ export class AuthService {
   }
   storeToken(tokenValue:string)
   {
-    localStorage.setItem()
+    localStorage.setItem('token',tokenValue)
+  }
+  getToken()
+  {
+    return localStorage.getItem('token')
+  }
+  private userPayload:any
+  getFullNameFromToken(){
+    if(this.userPayload)
+    {
+      return this.userPayload.name
+    }
+  }
+  getRoleFromToken(){
+    if(this.userPayload)
+    {
+      return this.userPayload.role
+    }
   }
 }
