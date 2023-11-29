@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { JwtHelperService} from '@auth@/angular-jwt';
 @Injectable({
   providedIn: 'root'
 })
@@ -47,5 +47,10 @@ export class AuthService {
     {
       return this.userPayload.role
     }
+  }
+  decodedToken(){
+    const jwtHeader=new JwtHelperService();
+    const token=this.getToken()
+    return jwtHelper.decodedToken(token)
   }
 }
